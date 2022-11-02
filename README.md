@@ -5,7 +5,7 @@ This Application is built using Angualr for frontend part and Spring-boot for ba
 
 To run the application download all the files.
 <h3>Frontend</h3>
-<p>For frontend <b>NewsappUI</b> open it in vsCode and type `npm install` to download requied dependencies. Then do a `ng serve` to run it in localhost:4200 port on browser.</p>
+For frontend <b>NewsappUI</b> open it in vsCode and type `npm install` to download requied dependencies. Then do a `ng serve` to run it in localhost:4200 port on browser.
 <h3>Backend</h3>.
 <p>For backend open all the remainig files in sts/eclipse/intelliji and run as springboot application.</p>
 
