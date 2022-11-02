@@ -1,0 +1,33 @@
+<div id="main" >
+<form class="login-form" [formGroup]="loginForm" [style.fontSize.px]="20">
+    <div class="login-block">
+        
+        <div class="card" style="background-color:rgb(108,164,242);padding:20px;border-radius: 5px;">
+            <!-- <div class="row" style="padding-top:0px;">
+                <h3>Login</h3>
+            </div> -->
+            <mat-form-field class="login-input-full-width">
+                <mat-label style="font-family: 'Alike Angular', serif;color:black">
+                    User ID
+                </mat-label>
+                <input style="color:black;font-family: 'Alike Angular', serif;" matInput placeholder="User Id" id="userId" formControlName="userId" required minlength="5" maxlength="15" class="userId">
+                <mat-error style="font-family: 'Alike Angular', serif;" *ngIf="loginForm.get('userId').errors?.required">User Id is mandatory</mat-error>
+            </mat-form-field>
+            <mat-form-field class="login-input-full-width">
+                <mat-label style="color:black; font-family: 'Alike Angular', serif;">Enter your password</mat-label>
+                <input style= "font-family: 'Alike Angular', serif;" matInput placeholder="Password" type="password" formControlName="password" id="password" required class="password" matInput [type]="hide ? 'password' : 'text'">
+                <mat-error style="font-family: 'Alike Angular', serif;" *ngIf="loginForm.get('password').errors?.required">Password is mandatory</mat-error>
+                <button mat-icon-button matSuffix (click)=" hide=! hide " [attr.aria-label]=" 'Hide password' " [attr.aria-pressed]="hide ">
+                    <mat-icon aria-hidden="false ">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+            </mat-form-field>
+            <!-- </div>
+        <div class="row"> -->
+            <button class="login-button" style="margin-bottom:10px;" type="submit" mat-raised-button  color="primary"  (click)="loginUser()">Login</button>
+            <p style="margin:0% ;padding:0%; font-size: small;">Didn't have account with us?</p>
+            <button class="register-button" mat-raised-button [routerLink]="['/register']" color="primary">Register</button>
+        </div>
+    </div>
+</form>
+</div>
+<!-- (click)="loginUser()" -->
