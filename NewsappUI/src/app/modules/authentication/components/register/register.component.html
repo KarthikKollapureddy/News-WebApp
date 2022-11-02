@@ -1,0 +1,45 @@
+<form id ="main" class="register-form" [formGroup]="registerForm" (ngSubmit)="registerUser()" >
+    <div class="register-block" >
+        <div calss ="card" style="background-color:rgb(108,164,242);padding:20px;border-radius: 5px; height:95%">
+        <div class="row">
+            <h3>Register User</h3>
+        </div>
+        <div class="row" >
+            <mat-form-field class="register-input-full-width">
+                <mat-label style="color:rgb(0, 0, 0);">Enter your FirstName</mat-label>
+                <input style="font-family: 'Alike Angular', serif;" matInput placeholder="First Name" id="firstName" formControlName="firstName" required>
+                <mat-error *ngIf="registerForm.get('firstName').errors?.required">First Name is mandatory</mat-error>
+            </mat-form-field>
+            <mat-form-field class="register-input-full-width">
+                <mat-label style="color:rgb(0, 0, 0);">Enter your LastName</mat-label>
+                <input id="lastName" matInput placeholder="Last Name" formControlName="lastName" required>
+                <mat-error *ngIf="registerForm.get('lastName').errors?.required">Last Name is mandatory</mat-error>
+            </mat-form-field>
+            <mat-form-field class="register-input-full-width">
+                <mat-label style="color:rgb(0, 0, 0);">Enter UserId</mat-label>
+                <input id="userId" matInput placeholder="User Id" class="userId" formControlName="userId" required minlength="5" maxlength="10">
+                <mat-error *ngIf="registerForm.get('userId').errors?.required">User Id is mandatory</mat-error>
+            </mat-form-field>
+            <!-- <mat-form-field class="register-input-full-width">
+                <mat-label style="color:rgb(0, 0, 0);">Enter Email ID</mat-label>
+                <input id="emailId" matInput placeholder="Eamil Id" class="emailId" formControlName="emailId" required minlength="5" maxlength="50">
+                <mat-error *ngIf="registerForm.get('emailId').errors?.required">Email Id is mandatory</mat-error>
+            </mat-form-field> -->
+
+            <mat-form-field class="register-input-full-width">
+                <mat-label style="color:rgb(0, 0, 0);">Enter Password</mat-label>
+                <input id="password" matInput placeholder="Password" class="password" formControlName="password" type="password" required matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)=" hide=! hide " [attr.aria-label]=" 'Hide password' " [attr.aria-pressed]="hide ">
+                  <mat-icon aria-hidden="false ">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="registerForm.get('password').errors?.required">Password is mandatory</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <!-- <button class="register-user" type="submit" mat-raised-button color="primary">Register</button><br><br> -->
+            <button class="register-user" type="submit" mat-raised-button color="primary" mat-stroked-button (click)="openSnackBar()">Register</button><br><br>
+            <button class="clear" type="reset" mat-raised-button color="primary">Clear</button>
+        </div>
+    </div>
+    </div>
+</form>
